@@ -40,7 +40,7 @@ function Vue (options) {
 ```
 Vue 函数声明
 
-#### ./init
+
 
 ### \core\config.js
 配置文件
@@ -50,7 +50,8 @@ Vue 函数声明
 核心工具文件
 * lang.js 是语言扩展工具
 * env.js 环境工具
-* 
+
+
 ### \core\observer
 数据绑定目录，数据监控器
 
