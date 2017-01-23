@@ -5,7 +5,7 @@ PS: 自己一点点看，一点点的研究，所以会写的有些乱～～～�
 * 源码是放在src目录里面的，主要是看这个目录下的东西。
 * 从src/core 这个目录下开始研究
 * 进入core之后，直接打开index.js，从这里开始看源码
-
+* 使用Facebook工具 [flow](https://flowtype.org/)
 
 ## 代码的一些细节
 
@@ -15,9 +15,9 @@ import Vue from './instance/index'
 import { initGlobalAPI } from './global-api/index'
 import { isServerRendering } from 'core/util/env'
 ```
-引入这几个文件的index
+引入这几个文件的index，分别导入了Vue的核心接口，和API接口，
 
-`initGlobalAPI(Vue)` //初始化全局的VUE
+`initGlobalAPI(Vue)` //安装API
 
 ### ./instance/index
 ```javascript
@@ -42,7 +42,17 @@ Vue 函数声明
 
 #### ./init
 
+### \core\config.js
+配置文件
 
+
+### \core\util
+核心工具文件
+* lang.js 是语言扩展工具
+* env.js 环境工具
+* 
+### \core\observer
+数据绑定目录，数据监控器
 
 
 
