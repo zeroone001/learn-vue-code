@@ -19,6 +19,29 @@ import { isServerRendering } from 'core/util/env'
 
 `initGlobalAPI(Vue)` //初始化全局的VUE
 
+### ./instance/index
+```javascript
+import { initMixin } from './init'
+import { stateMixin } from './state'
+import { renderMixin } from './render'
+import { eventsMixin } from './events'
+import { lifecycleMixin } from './lifecycle'
+import { warn } from '../util/index'
+```
+
+```javascript
+function Vue (options) {
+  if (process.env.NODE_ENV !== 'production' &&
+    !(this instanceof Vue)) {
+    warn('Vue is a constructor and should be called with the `new` keyword')
+  }
+  this._init(options)
+}
+```
+Vue 函数声明
+
+#### ./init
+
 
 
 
