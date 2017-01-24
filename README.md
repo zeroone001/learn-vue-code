@@ -53,8 +53,18 @@ Vue 函数声明
 
 
 ### \core\observer
-数据绑定目录，数据监控器
+数据绑定目录，数据监控器,
+index.js
+数据监控
+
+### \core\vdom
+虚拟DOM目录
+
+### \core\global-api
+全局api目录
 
 
+### \core\instance
+实例核心目录
 
 ## 一点小总结
