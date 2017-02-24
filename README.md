@@ -1,4 +1,57 @@
-# learn-vue-code
+# VUE 学习记录
+## 杂项
+vue 组件的API 有三个部分，props，events，slots
+* Props: 允许外部环境传递数据给组件
+* events： 允许组件出发外部环境的副作用
+* slots： 允许外部环境将额外的内容组合在组件中
+```javascript
+<my-component
+  :foo="baz"
+  :bar="qux"
+  @event-a="doThis"
+  @event-b="doThat"
+>
+  <img slot="icon" src="...">
+  <p slot="main-text">Hello!</p>
+</my-component>
+``` 
+### 子组件索引
+需要在javascript中直接访问子组件。这个时候可以使用ref 为子组件指定一个索引ID
+```javascript
+<div id="parent">
+  <user-profile ref="profile"></user-profile>
+</div>
+var parent = new Vue({ el: '#parent' })
+// 访问子组件
+var child = parent.$refs.profile
+```
+### 组件命名约定
+当注册组件的时候，可以使用： kebab-case ，camelCase ，或 TitleCase 。
+但是在HTML模版中，请使用 kebab-case 形式
+
+### 递归组件
+组件在他的模版内可以递归的调用自己，但是只有当他有name选项的时候是可以的
+
+### v-once
+当组件中包含大量的静态内容的时候，可以考虑使用v-once将渲染的结果缓存起来
+```javascript
+Vue.component('terms-of-service', {
+  template: '\
+    <div v-once>\
+      <h1>Terms of Service</h1>\
+      ... a lot of static content ...\
+    </div>\
+  '
+})
+```
+### 
+
+
+
+
+
+
+# learn-vue-code 源码
 A study note for vue
 PS: 自己一点点看，一点点的研究，所以会写的有些乱～～～～
 ## 文件结构的梳理
@@ -68,3 +121,14 @@ index.js
 实例核心目录
 
 ## 一点小总结
+
+
+
+
+
+
+
+
+
+
+
