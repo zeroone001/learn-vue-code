@@ -53,7 +53,7 @@ Vue.component('terms-of-service', {
 </keep-alive>
 ```
 
-### <transition>
+### transition
 * 作为单个组件的过度效果，不会渲染额外的DOM元素。
 * 只是将内容包裹在其中，简单的运用过渡行为。
 
