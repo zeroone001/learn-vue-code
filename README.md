@@ -44,7 +44,18 @@ Vue.component('terms-of-service', {
   '
 })
 ```
-### 
+### keep-alive
+是一个包裹组件，<keep-live>
+```javascript
+<keep-alive>
+  <todo-list v-if="todos.length > 0"></todo-list>
+  <no-todos-gif v-else></no-todos-gif>
+</keep-alive>
+```
+
+### <transition>
+作为单个组件的过度效果，不会渲染额外的DOM元素。只是将内容包裹在其中，简单的运用过渡行为。
+
 
 
 
