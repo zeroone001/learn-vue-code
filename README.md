@@ -57,6 +57,37 @@ Vue.component('terms-of-service', {
 * 作为单个组件的过度效果，不会渲染额外的DOM元素。
 * 只是将内容包裹在其中，简单的运用过渡行为。
 
+### 数据绑定思想
+基于getter和setter的方式
+```javascript
+function Vue(option){
+  this.init(option);
+}
+Vue.prototype.init = function(option){
+  this._data = option.data || {};
+  this._method = option.method || {};
+    this.bingdings = {};
+    this.elements = typeof option.ele === "string" ? document.querySelectorAll(option.ele) : option.ele;
+    this.bind();
+    this.observe();
+    this.react();
+    this.initMvvM();
+}
+Vue.prototype.bind = function(){
+  
+}
+```
+#### Object.defineProperty()
+* 会直接在一个对象上定义一个新的属性，或者修改一个已存在的属性，并返回这个对象；
+```Object.defineProperty(obj, prop, descriptor)```
+* 允许精确的添加或者修改对象的属性
+*
+
+
+
+
+
+
 
 
 
