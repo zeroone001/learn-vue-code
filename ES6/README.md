@@ -46,7 +46,35 @@ function handle(obj = {}){
 * 整体加载，import * as mm from './das';
 * module 命令 可以达到整体加载的效果，module mm from './cd';
 * ES6的加载机制跟commonJS完全不同，cJ模块输出的是一个值的拷贝，但是ES6输出的是值的引用；
-* 
+#### await操作符
+被用来等待async function 返回的promise
+返回值：返回promise resolved的值，如果不是promise，则返回自身；
+
+#### async function
+声明了一个异步函数，并返回了AsyncFunction对象；
+```javascript
+async function name([param[, param[, ... param]]]) {
+   statements
+}
+```
+### 尾调用
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
