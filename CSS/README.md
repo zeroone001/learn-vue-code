@@ -1,15 +1,17 @@
 # Sticky Footer - 完美的绝对底部
 
 ### HTML结构
-```javascript
+```html
 <body>
-    <div class=“wx_wrap"></div>
-    <div class=“wx_footer"></div>
+    <div class="wx_wrap"></div>
+    <div class="wx_footer"></div>
 </body>
 ```
+
 ### CSS 结构
 #### absolute
-``` javascript
+
+```css
 html{
     height: 100%;
 }
@@ -25,7 +27,9 @@ body {
     height: 50px;
 }
 ```
+
 #### table
+```css
 html, body {
     height: 100%;
 }
@@ -38,8 +42,9 @@ body {
     display: table-row;
     height: 100%;
 }
+```
 #### calc
-```javascript
+```css
 .wx_wrap {
     min-height: calc(100vh - 50px);
 }
@@ -48,7 +53,7 @@ body {
 }
 ```
 #### flex
-```javascript
+```css
 html {
     height: 100%;
 }

@@ -46,11 +46,12 @@ Vue.component('terms-of-service', {
 ```
 ### keep-alive
 是一个包裹组件，<keep-live>
-```javascript
+```html
 <keep-alive>
   <todo-list v-if="todos.length > 0"></todo-list>
   <no-todos-gif v-else></no-todos-gif>
 </keep-alive>
+
 ```
 
 ### transition
