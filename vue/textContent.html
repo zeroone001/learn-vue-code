@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>two-way-bind-4</title>
+</head>
+<body>
+<div id="app">
+    <p>
+        姓名：{{user.name.firstName}}<span>{{user.name.lastName}}</span>
+    </p>
+    <p>年龄：{{user.age}}</p>
+    <div>性别：{{user.sex}}</div>
+</div>
+<script>
+    function Vue(obj) {
+        this.el = obj.el;
+        this.data = obj.data;
+        this.init(this.el, this.data);
+    }
+
+    Vue.prototype = {
+        
+        init: (el, data) => {
+//            判断是否有textContent属性
+            if (!('textContent' in document)) {
+                console.log('Please upgrade your browser！');
+                return
+            }
+            //    获取app入口的dom节点
+            let appEntrance = document.getElementById(el.slice(1));
+            //  将入口元素内部的符合的部分转换成对应的变量
+            function translate(entrance, reg, value) {
+                if (entrance instanceof HTMLElement) {
+                    let children = entrance.childNodes;
+                    let len = entrance.childNodes.length;
+                    for (let i = 0; i < len; i++) {
+                        if (children[i].childNodes.length > 0) {
+                            translate(children[i], reg, value)
+                        } else {
+                            children[i].textContent = children[i].textContent.replace(reg, value);
+                        }
+                    }
+                } else {
+                    console.log('Entrance is invalid!');
+                }
+            }
+
+            //  遍历属性去替换
+            function walk(entrance, obj, name) {
+                if (entrance instanceof HTMLElement) {
+                    if (obj !== null && typeof obj === 'object') {
+                        let reg;
+                        for (let key in obj) {
+                            if (obj.hasOwnProperty(key)) {
+                                if (typeof obj[key] !== 'object') {
+                                    reg = name ? new RegExp(`{{${name}.${key}}}`, 'g') : new RegExp(`{{${key}}}`, 'g');
+
+                                    translate(entrance, reg, obj[key]);
+                                } else {
+                                    walk(entrance, obj[key], name ? `${name}.${key}` : key);
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    console.log('Entrance is invalid!');
+                }
+            }
+
+
+            walk(appEntrance, data);
+        }
+    };
+
+    let app = new Vue({
+        el: '#app',
+        data: {
+            user: {
+                name: {
+                    firstName: 'ren',
+                    lastName: 'naiqian'
+                },
+                age: 23,
+                sex: 'male'
+            }
+        }
+    });
+
+
+</script>
+</body>
+</html>
