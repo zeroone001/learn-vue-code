@@ -43,8 +43,13 @@
     }
     obj.b(); // prints undefined, Window
     obj.c(); // prints 10, Object {...}
-    5.箭头函数不能使用generator函数，不能使用yield关键字
-    6.箭头函数不能换行
+    5. 箭头函数不能使用generator函数，不能使用yield关键字
+    6. 箭头函数不能换行
+    7. 比函数表达式短，并且不绑定自己的this，arguments，super，
+    8. 箭头函数最好是在非方法函数中使用，且不能用做构造函数。
+    9. 箭头函数的两方面作用，一个是更简短的函数书写，而是对this的词法解析
+    10. 箭头函数没有原型属性；
+    
 
 
 
