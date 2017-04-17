@@ -49,12 +49,23 @@
     8. 箭头函数最好是在非方法函数中使用，且不能用做构造函数。
     9. 箭头函数的两方面作用，一个是更简短的函数书写，而是对this的词法解析
     10. 箭头函数没有原型属性；
-    
+
 
 
 
 */
+/*
+    对所有的引用使用const,这能确保无法对引用重新赋值；
+    let是块级作用域，var 是函数作用域；
+    
+    使用拓展运算符...复制数组
+    const itemCopy = [...items];
 
+    使用array#from 把一个类数组对象转换成数组
+    const foo = document.querySelectorAll('.foo');
+    const nodes = Array.from(foo);
+
+*/
 
 function changeStuff(a, b, c)
 {
