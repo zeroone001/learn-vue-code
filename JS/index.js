@@ -57,7 +57,7 @@
 /*
     对所有的引用使用const,这能确保无法对引用重新赋值；
     let是块级作用域，var 是函数作用域；
-    
+
     使用拓展运算符...复制数组
     const itemCopy = [...items];
 
@@ -65,7 +65,20 @@
     const foo = document.querySelectorAll('.foo');
     const nodes = Array.from(foo);
 
+    字符串要使用单引号
+    使用模版字符串代替字符串链接，因为更简洁更具有可读性
+
+    不要使用arguments，他是一个类数组，rest参数才是一个真正的数组
+
 */
+
+
+
+
+
+
+
+
 
 function changeStuff(a, b, c)
 {
