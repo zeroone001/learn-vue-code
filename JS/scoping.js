@@ -15,3 +15,5 @@ function objectFactory() {
     return typeof ret === 'object' ? ret : obj; //确保构造器总是返回一个对象
 
 };
+//类数组对象
+// 拥有一个length属性和若干索引属性的对象

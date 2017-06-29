@@ -40,3 +40,29 @@ console.log(Object.prototype.__proto__ === null);
 // null代表没有对象
 // 原型链
 // 在《JavaScript权威指南》第六版 8.7.2 节，讲到每一个函数都包含一个 prototype 属性，然后紧接着在 8.7.4 节 bind 函数，就讲到由 bind 方法返回的函数并不包含 prototype 属性。
+
+// 继承
+// 1，原型链的继承
+function Parent() {
+
+}
+Parent.prototype.myname = () => {
+    console.log('aa');
+}
+
+function Child() {
+
+}
+Child.prototype = new Parent();
+let bb = new Child();
+bb.myname();
+// 2，经典继承
+function Parent() {
+    this.name = [];
+
+}
+
+function Child(name) {
+    Parent.call(this, name);
+}
+let cc = new Child();
