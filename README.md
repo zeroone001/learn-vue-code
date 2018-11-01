@@ -1,5 +1,5 @@
 # VUE 学习记录
-## 杂项
+## 杂项aa
 vue 组件的API 有三个部分，props，events，slots
 * Props: 允许外部环境传递数据给组件
 * events： 允许组件出发外部环境的副作用

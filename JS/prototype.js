@@ -66,3 +66,12 @@ function Child(name) {
     Parent.call(this, name);
 }
 let cc = new Child();
+// 3，组合继承
+function Parent() {
+    this.name = [];
+}
+
+function Child() {
+    Parent.call(this);
+}
+Child.prototype = new Parent();
